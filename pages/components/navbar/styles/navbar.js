@@ -4,7 +4,7 @@ import breakpoints from "../../../utils/breakpoints";
 // Create a Title component that'll render an <h1> tag with some styles
 export const Container = styled.nav`
   width: 100%;
-  height: 44px;
+  height: 50px;
   background-color: hsl(0, 0%, 100%);
   display: flex;
   position: fixed;
