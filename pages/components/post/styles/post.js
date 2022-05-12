@@ -7,6 +7,8 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin-bottom: 50px;
+  border-top: 1px solid hsl(0, 0%, 86%);
 `;
 
 // Create a Wrapper component that'll render a <section> tag with some styles
@@ -63,7 +65,6 @@ export const Media = styled.div`
   display: flex;
   overflow-y: hidden;
   overflow-x: auto;
-
   width: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -90,7 +91,6 @@ export const FavouriteButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-
   padding: 8px;
   margin-left: auto;
 `;
