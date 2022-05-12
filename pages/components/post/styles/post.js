@@ -69,22 +69,30 @@ export const Media = styled.div`
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  position: relative;
   &:-webkit-scrollbar {
     display: none;
   }
 `;
 
-export const Footer = styled.div`
-  background-color: hsl(0, 0%, 100%);
+export const Meta = styled.div`
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  color: rgba(255, 255, 255);
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 0 4px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 `;
 
-export const Meta = styled.div`
+export const MetaContainer = styled.div`
   display: flex;
-  position: relative;
+  padding: 16px;
+  span {
+    font-weight: bold;
+  }
 `;
 
 export const FavouriteButton = styled.button`
@@ -93,12 +101,13 @@ export const FavouriteButton = styled.button`
   cursor: pointer;
   padding: 8px;
   margin-left: auto;
+  color: rgba(255, 255, 255);
 `;
 
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 8px;
+  padding: 15px 16px;
   gap: 10px;
 `;
 
@@ -135,7 +144,7 @@ export const Caption = styled.div`
 `;
 
 export const Comments = styled.div`
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   color: hsl(0, 0%, 60%);
 `;

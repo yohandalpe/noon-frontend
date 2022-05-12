@@ -29,18 +29,19 @@ export default function Post() {
               }}
             />
           </PostCard.Media>
-        </PostCard.Content>
-
-        <PostCard.Footer>
           <PostCard.Meta>
-            <div>
-              Leaf iPhone Case<span>AED 40</span>
-            </div>
-            <PostCard.FavouriteButton>
-              <i className="fa fa-heart-o fa-2x"></i>
-            </PostCard.FavouriteButton>
+            <PostCard.MetaContainer>
+              <div>
+                Leaf iPhone Case
+                <br />
+                <span>AED 40</span>
+              </div>
+              <PostCard.FavouriteButton>
+                <i className="fa fa-heart-o fa-2x"></i>
+              </PostCard.FavouriteButton>
+            </PostCard.MetaContainer>
           </PostCard.Meta>
-        </PostCard.Footer>
+        </PostCard.Content>
 
         <PostCard.Info>
           <PostCard.Likes>
