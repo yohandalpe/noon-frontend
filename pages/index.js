@@ -12,7 +12,7 @@ function Home({ posts }) {
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const response = await fetch(`http://localhost:3001/api/posts`);
+  const response = await fetch(`${process.env.apiEndpoint}/api/posts`);
   const posts = await response.json();
 
   // Pass data to the page via props

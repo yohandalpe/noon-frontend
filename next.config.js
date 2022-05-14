@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["i.picsum.photos"],
   },
+  env: {
+    apiEndpoint: "http://localhost:3001",
+  },
 };
 
 module.exports = nextConfig;
