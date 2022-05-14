@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["i.picsum.photos"],
   },
   env: {
-    apiEndpoint: "http://localhost:3001",
+    apiEndpoint: "https://noon-backend.herokuapp.com",
   },
 };
 
