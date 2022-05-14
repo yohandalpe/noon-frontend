@@ -4,8 +4,10 @@ import * as PostCard from "./styles/post";
 import Favourite from "../common/favourite";
 
 function Post({ posts }) {
+  // Initialise state
   const [updatedPosts, setUpdatedPosts] = useState(null);
 
+  // Update favourite posts on the API
   const updateFavouritePosts = async (id, isFavourite) => {
     const request = await fetch(
       `${process.env.apiEndpoint}/api/posts/favourite/${id}`,
@@ -19,9 +21,9 @@ function Post({ posts }) {
     return setUpdatedPosts(updatedPosts.results);
   };
 
+  // Handle favourite button
   const allPosts = [...posts];
-
-  const handleLike = (post) => {
+  const handleFavourite = (post) => {
     const index = allPosts.indexOf(post);
     allPosts[index] = { ...allPosts[index] };
     allPosts[index].is_favourite = !allPosts[index].is_favourite;
@@ -30,11 +32,13 @@ function Post({ posts }) {
 
   console.log(updatedPosts);
 
+  // Check for updated posts after favourite posts update
   if (updatedPosts) {
     posts = updatedPosts.data;
     console.log(posts);
   }
 
+  // Posts availability message
   const message = posts.length < 1 ? "No posts found." : "";
 
   return (
@@ -85,7 +89,7 @@ function Post({ posts }) {
                     <PostCard.FavouriteButton>
                       <Favourite
                         liked={post.is_favourite}
-                        onClick={() => handleLike(post)}
+                        onClick={() => handleFavourite(post)}
                       />
                     </PostCard.FavouriteButton>
                   </PostCard.MetaContainer>
