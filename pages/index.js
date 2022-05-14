@@ -1,13 +1,22 @@
-import Head from "next/head";
-import Image from "next/image";
+import Seo from "./components/common/seo";
 import Post from "./components/post";
-import Navbar from "./components/navbar";
 
-export default function Home() {
+function Home({ posts }) {
   return (
     <>
-      <Post />
-      <Navbar />
+      <Seo title="Home" />
+      <Post posts={posts} />
     </>
   );
 }
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const response = await fetch(`http://localhost:3001/api/posts`);
+  const posts = await response.json();
+
+  // Pass data to the page via props
+  return { props: { posts: posts.data } };
+}
+
+export default Home;
