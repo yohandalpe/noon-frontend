@@ -7,8 +7,10 @@ export const Container = styled.article`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin-bottom: 50px;
   border-top: 1px solid hsl(0, 0%, 86%);
+  &:last-of-type {
+    margin-bottom: 50px;
+  }
 `;
 
 // Create a Wrapper component that'll render a <section> tag with some styles
@@ -51,9 +53,6 @@ export const User = styled.span`
   color: hsl(0, 0%, 15%);
   text-decoration: none;
   text-transform: lowercase;
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export const Content = styled.div`
@@ -129,12 +128,10 @@ export const Likes = styled.div`
 `;
 
 export const Caption = styled.div`
-  display: flex;
-  span {
-    font-size: 14px;
-    font-weight: 400;
-    color: hsl(0, 0%, 15%);
-  }
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: hsl(0, 0%, 15%);
   a {
     font-size: 14px;
     font-weight: 500;
@@ -143,8 +140,23 @@ export const Caption = styled.div`
   }
 `;
 
+export const Hashtags = styled.div`
+  margin: 0.5rem 0;
+  a {
+    color: blue;
+  }
+`;
+
 export const Comments = styled.div`
   font-size: 12px;
   font-weight: 400;
   color: hsl(0, 0%, 60%);
+`;
+
+export const Message = styled.div`
+  font-size: 14px;
+  font-weight: 700;
+  color: red;
+  text-align: center;
+  margin: 1rem 0;
 `;
