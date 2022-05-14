@@ -8,8 +8,19 @@ export const Container = styled.article`
   flex-direction: column;
   overflow: hidden;
   border-top: 1px solid rgb(219, 219, 219);
+  &:first-of-type {
+    margin-top: 0;
+  }
   &:last-of-type {
     margin-bottom: 50px;
+  }
+  ${breakpoints.lg} {
+    &:first-of-type {
+      margin-top: 50px;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 `;
 
@@ -117,6 +128,7 @@ export const Info = styled.div`
   flex-direction: column;
   padding: 15px 16px;
   gap: 10px;
+  background-color: rgb(255, 255, 255);
 `;
 
 // Create a Likes component that'll render a <div> tag with some styles
