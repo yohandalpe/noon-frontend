@@ -1,7 +1,7 @@
 import Link from "next/link";
 import * as NavBar from "./styles/navbar";
 
-export default function Navbar() {
+function Navbar() {
   return (
     <>
       <NavBar.Container>
@@ -19,3 +19,5 @@ export default function Navbar() {
     </>
   );
 }
+
+export default Navbar;
