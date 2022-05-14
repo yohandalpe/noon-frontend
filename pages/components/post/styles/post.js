@@ -182,7 +182,7 @@ export const Comments = styled.div`
 export const Message = styled.div`
   font-size: 14px;
   font-weight: 700;
-  color: red;
+  color: rgb(255, 0, 0);
   text-align: center;
   margin: 1rem 0;
 `;

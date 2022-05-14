@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import breakpoints from "../../../utils/breakpoints";
 
-// Create a Wrapper component that'll render an <nav> tag with some styles
+// Create a Wrapper component that'll render a <nav> tag with some styles
 export const Wrapper = styled.nav`
   width: 100%;
   height: 50px;
@@ -25,7 +25,7 @@ export const Wrapper = styled.nav`
   }
 `;
 
-// Create a Container component that'll render an <div> tag with some styles
+// Create a Container component that'll render a <div> tag with some styles
 export const Container = styled.div`
   width: 100%;
   height: 50px;

@@ -4,7 +4,7 @@ const Favourite = (props) => {
   return (
     <i
       onClick={props.onClick}
-      style={{ cursor: "pointer", color: props.liked ? "red" : "" }}
+      style={{ cursor: "pointer", color: props.liked ? "rgb(255,0,0)" : "" }}
       className={classes}
       aria-hidden="true"
     />
