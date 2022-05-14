@@ -1,10 +1,10 @@
 import { useState, Fragment } from "react";
 import Image from "next/image";
 import * as PostCard from "./styles/post";
-import Like from "../common/like";
+import Favourite from "../common/favourite";
 
 function Post({ posts }) {
-  const [data, setData] = useState(null);
+  const [updatedPosts, setUpdatedPosts] = useState(null);
 
   const updateFavouritePosts = async (id, isFavourite) => {
     const request = await fetch(
@@ -16,7 +16,7 @@ function Post({ posts }) {
       }
     );
     const updatedPosts = await request.json();
-    return setData(updatedPosts.results);
+    return setUpdatedPosts(updatedPosts.results);
   };
 
   const allPosts = [...posts];
@@ -28,10 +28,10 @@ function Post({ posts }) {
     updateFavouritePosts(allPosts[index].id, allPosts[index].is_favourite);
   };
 
-  console.log(data);
+  console.log(updatedPosts);
 
-  if (data) {
-    posts = data;
+  if (updatedPosts) {
+    posts = updatedPosts.data;
     console.log(posts);
   }
 
@@ -83,7 +83,7 @@ function Post({ posts }) {
                       </span>
                     </div>
                     <PostCard.FavouriteButton>
-                      <Like
+                      <Favourite
                         liked={post.is_favourite}
                         onClick={() => handleLike(post)}
                       />

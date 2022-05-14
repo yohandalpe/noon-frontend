@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import breakpoints from "../../../utils/breakpoints";
 
-// Create a Title component that'll render an <h1> tag with some styles
+// Create a Container component that'll render an <nav> tag with some styles
 export const Container = styled.nav`
   width: 100%;
   height: 50px;
-  background-color: hsl(0, 0%, 100%);
+  background-color: rgb(255, 255, 255);
   display: flex;
   position: fixed;
   bottom: 0;
@@ -17,11 +17,11 @@ export const Container = styled.nav`
     top: 0;
     width: 100%;
     height: 1px;
-    background-color: hsl(0, 0%, 86%);
+    background-color: rgb(219, 219, 219);
   }
 `;
 
-// Create a Wrapper component that'll render a <section> tag with some styles
+// Create a Button component that'll render an <a> tag with some styles
 export const Button = styled.a`
   flex: 1 0 auto;
   display: flex;

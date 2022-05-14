@@ -1,4 +1,4 @@
-const Like = (props) => {
+const Favourite = (props) => {
   let classes = "fa fa-2x fa-heart";
   if (!props.liked) classes += "-o";
   return (
@@ -11,4 +11,4 @@ const Like = (props) => {
   );
 };
 
-export default Like;
+export default Favourite;
