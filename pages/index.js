@@ -1,5 +1,5 @@
-import Seo from "./components/common/seo";
-import Post from "./components/post";
+import Seo from "../components/common/seo";
+import Post from "../components/post";
 
 function Home({ posts }) {
   return (
