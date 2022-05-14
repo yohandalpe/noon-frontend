@@ -10,7 +10,7 @@ export default function Navbar() {
             <i className="fa fa-home" />
           </NavBar.Button>
         </Link>
-        <Link href="/" passHref>
+        <Link href="/favourites" passHref>
           <NavBar.Button>
             <i className="fa fa-heart" />
           </NavBar.Button>
