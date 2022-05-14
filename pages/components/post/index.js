@@ -1,9 +1,42 @@
-import { Fragment } from "react";
+import { useState, Fragment } from "react";
 import Image from "next/image";
 import * as PostCard from "./styles/post";
+import Like from "../common/like";
 
-export default function Post({ posts }) {
+function Post({ posts }) {
+  const [data, setData] = useState(null);
+
+  const updateFavouritePosts = async (id, isFavourite) => {
+    const request = await fetch(
+      `${process.env.apiEndpoint}/api/posts/favourite/${id}`,
+      {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ is_favourite: isFavourite }),
+      }
+    );
+    const updatedPosts = await request.json();
+    return setData(updatedPosts.results);
+  };
+
+  const allPosts = [...posts];
+
+  const handleLike = (post) => {
+    const index = allPosts.indexOf(post);
+    allPosts[index] = { ...allPosts[index] };
+    allPosts[index].is_favourite = !allPosts[index].is_favourite;
+    updateFavouritePosts(allPosts[index].id, allPosts[index].is_favourite);
+  };
+
+  console.log(data);
+
+  if (data) {
+    posts = data;
+    console.log(posts);
+  }
+
   const message = posts.length < 1 ? "No posts found." : "";
+
   return (
     <>
       {message && <PostCard.Message>{message}</PostCard.Message>}
@@ -50,7 +83,10 @@ export default function Post({ posts }) {
                       </span>
                     </div>
                     <PostCard.FavouriteButton>
-                      <i className="fa fa-heart-o fa-2x"></i>
+                      <Like
+                        liked={post.is_favourite}
+                        onClick={() => handleLike(post)}
+                      />
                     </PostCard.FavouriteButton>
                   </PostCard.MetaContainer>
                 </PostCard.Meta>
@@ -77,3 +113,5 @@ export default function Post({ posts }) {
     </>
   );
 }
+
+export default Post;
