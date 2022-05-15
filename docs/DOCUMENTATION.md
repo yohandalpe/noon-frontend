@@ -45,12 +45,12 @@ export default breakpoints;
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-		 html, body {
-		 margin: 0;
-		 padding: 0;
-		 font-family: 'Roboto', sans-serif;
-		 background: #ffffff;
-		}`;
+html, body {
+    margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+	background: #ffffff;
+}`;
 ```
 
 `pages/_app.js`
@@ -530,7 +530,7 @@ export default Seo;
 
 ```
 
-1. Created a common layout for pages.
+9. Created a common layout for pages.
     
 `pages/components/layout.js`
 ```js
@@ -570,18 +570,19 @@ export default MyApp;
 
 ```
 
-1.  Added external domains (for CDN images) and API endpoint in `next.config.js`.
+10.  Added external domains (for CDN images) and API endpoint in `next.config.js`.
 
 ```js
 images: {
-		 domains: ["i.picsum.photos"],
-		 },
-		 env: {
-		 apiEndpoint: "http://localhost:3001",
-		 },
+    domains: ["i.picsum.photos"],
+},
+env: {
+    apiEndpoint: "http://localhost:3001",
+},
 ```
 
 11. Completed Home and Favourites pages.
+
 `pages/index.js`
 ```js
 import Seo from "../components/common/seo";
@@ -652,4 +653,4 @@ export default Favourites;
 
 ```
 
-12. Deployed the app on [Vercel](https://noon-frontend-yd.vercel.app/).
+12.  Deployed the app on [Vercel](https://noon-frontend-yd.vercel.app/).
